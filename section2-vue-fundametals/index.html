@@ -14,12 +14,27 @@
             <p><a :href="url" target="_blank">Google</a></p>
             <p v-html="raw_url"></p>
             <hr />
+
+            <!-- /////////// NAME ////////// -->
             <label>First Name</label>
             <input type="text" v-model="firstName" />
 
+            <label>Middle Name</label>
+            <input type="text" @keyup.enter="updateMiddleName" />
+            <br />
             <label>Last Name</label>
             <!-- <input type="text" v-model="lastName" /> -->
             <input type="text" :value="lastName" @input="updateLastName" />
+
+            <label>Age</label>
+            <input type="number" v-model="age" />
+
+            <p>Type of age:{{ typeof age }}</p>
+
+            <button type="button" @click="increment">Increment</button>
+            <!-- <button type="button" v-on:click="increment">Increment</button> -->
+            <button type="button" v-on:click="decrement">Decrement</button>
+            <br />
             <!-- Passing on Data with Events -->
             <input
                 type="text"
@@ -35,13 +50,9 @@
 
             <p>{{ firstName }} {{lastName }}</p>
             <h2>Full name:</h2>
-            <p>{{ fullName()}}</p>
+            <p>{{ fullName}}</p>
 
             <hr />
-            <p>{{ age }}</p>
-            <button type="button" @click="increment">Increment</button>
-            <!-- <button type="button" v-on:click="increment">Increment</button> -->
-            <button type="button" v-on:click="decrement">Decrement</button>
         </div>
         <script src="http://unpkg.com/vue@3"></script>
         <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->

@@ -1,0 +1,45 @@
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+label {
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: block;
+}
+
+input[type=number] {
+    margin: 20px 0;
+    font-size: 20px;
+    display: block;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: green;
+    text-align: center;
+    color: #fff;
+    line-height: 150px;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.text-black {
+    color: black
+}
+
+.text-orange {
+    color: orange
+}
+
+[v-cloak] {
+    display: none;
+}
