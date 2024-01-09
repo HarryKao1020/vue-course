@@ -4,6 +4,8 @@ const vm = Vue.createApp({
             isPurple: false,
             selectedColor: "",
             size: 150,
+            mode: 1,
+            show: 1,
         };
     },
     methods: {},

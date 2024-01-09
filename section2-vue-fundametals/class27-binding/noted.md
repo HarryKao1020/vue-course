@@ -26,6 +26,9 @@
 
             <!--改成用computed呼叫-->
             <div class="circle" :class="circle_classes">Hi!</div>
+
+
+
         </div>
         <script src="http://unpkg.com/vue@3"></script>
         <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
@@ -136,3 +139,64 @@ const vm = Vue.createApp({
                 Hi!
             </div>
 ```
+
+---
+
+## v-if
+
+-   對 DOM 的元素做操作，直接消失在 DOM
+-   可以在<template></template> 的 tag 裡面使用
+-   cheap on load because it's lazy
+-   Expensive on Toggle : 經常切換的話很消耗效能，可以用 v-show
+
+```HTML
+<div>
+    <select v-model="mode">
+        <option value="1">v-if</option>
+        <option value="2">v-if-else</option>
+        <option value="3">v-else</option>
+    </select>
+    <p v-if="mode==1">Showing v-if directive content</p>
+    <div v-else-if="mode==2">
+        <p>Bonus content</p>
+        <h3>v-else-if</h3>
+    </div>
+    <p v-else-if="mode==3">v-else</p>
+</div>
+
+```
+
+app.js
+
+```javascript
+const vm = Vue.createApp({
+    data() {
+        return {
+            isPurple: false,
+            selectedColor: "",
+            size: 150,
+            mode: 1,
+        };
+    },
+```
+
+---
+
+## v-show
+
+-   在 DOM 的元素上加上 css : display:none
+-   不能跟 v-else 一起使用，但可以使用其他寫法 例如: !==
+-   不能在<template></template> 的 tag 裡面使用
+-   切換頻率高可以使用 v-show
+
+```HTML
+<div>
+    <i v-show="show == 1">v-show</i>
+    <i v-show="show !==1">v-else-show</i>
+</div>
+```
+
+### v-if / v-show 選擇
+
+如果經常要切換的東西用 v-show
+如果不常切換的用 v-if

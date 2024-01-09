@@ -1,0 +1,24 @@
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+label {
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: block;
+}
+
+input[type=number] {
+    margin: 20px 0;
+    font-size: 20px;
+    display: block;
+}
+
+.bird {
+    color: red
+}
+
+[v-cloak] {
+    display: none;
+}

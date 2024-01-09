@@ -28,6 +28,28 @@
             >
                 Hi!
             </div>
+            <hr />
+            <!-- v-if  -->
+            <div>
+                <select v-model="mode">
+                    <option value="1">v-if</option>
+                    <option value="2">v-if-else</option>
+                    <option value="3">v-else</option>
+                </select>
+                <p v-if="mode==1">Showing v-if directive content</p>
+                <div v-else-if="mode==2">
+                    <p>Bonus content</p>
+                    <h3>v-else-if</h3>
+                </div>
+                <p v-else-if="mode==3">v-else</p>
+            </div>
+
+            <hr />
+            <!-- v-show -->
+            <div>
+                <i v-show="show==1">v-show</i>
+                <i v-show="show !==1">v-else-show</i>
+            </div>
         </div>
         <script src="http://unpkg.com/vue@3"></script>
         <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
